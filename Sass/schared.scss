@@ -1,0 +1,46 @@
+﻿@import "Grid";
+
+$mainGray: #383838;
+$mainOrange: #ff7f29;
+//***************************** Text and headlines *********************************************
+h1 {
+    color: #5e5d5d;
+    margin-top: 40px;
+}
+
+h2 {
+    color: #5e5d5d;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+input[type="text"]{
+    width:calc(100% - 20px);
+    padding:10px;
+    border: solid gray 1px;
+    border-radius: 5px;
+}
+
+input[type="password"]{
+    width:calc(100% - 20px);
+    padding:10px;
+    border: solid gray 1px;
+    border-radius: 5px;
+}
+
+input[type="submit"]{
+    color: white;
+    font-weight: bold;
+    width:100%;
+    padding:10px;
+    border: solid gray 1px;
+    border-radius: 5px;
+    background: $mainOrange;
+}

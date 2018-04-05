@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script lang="text/javascript" src="../js/jquery.min.js"></script> 
+    <script lang="text/javascript" src="../js/main.js"></script> 
+</head>
+
+<body>
+    <h1 id="headline"></h1>
+        <img id="loader" class="center" src="../img/transfer.gif" />
+        <div id="pgmContainer"></div>
+    <script>
+      
+        
+        $(function () {
+            // console.log("ready!");
+            $("#loader").show();
+          
+            var id = window.localStorage.getItem("id");
+
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:57693/api/Program/GetFullProgram/' + id,
+                success: function (data) {
+                    $("#loader").hide();                    
+                    $("#pgmContainer").empty();
+
+                $("#headline").html(data.program.Name);
+
+                    $("#pgmContainer").append("<ul>");
+                   
+                   
+                            
+                    $.each(data.sessionsDetails, function (i, pgm) {
+                        
+                            $("#pgmContainer").append("<li>" + pgm.session.Name);                         
+                                    $("#pgmContainer").append("<ul>");
+                                            $.each(pgm.sessionItems, function (i, ses) {
+                                                    
+                                                $("#pgmContainer").append("<li onclick=\"navigate('../Session/SessionItem'," + ses.ID + ")\">" + ses.Name + " " + ses.Reps + "</li>");    
+                                            });
+                                    $("#pgmContainer").append("</ul>");
+                            $("#pgmContainer").append("</li>");
+                    });
+
+                    $("#pgmContainer").append("</ul>");
+
+                   
+                }
+            });
+        
+        });
+    </script>
+
+</body>
+
+</html>

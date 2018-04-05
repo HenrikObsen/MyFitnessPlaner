@@ -1,0 +1,437 @@
+.row + .row {
+  margin-top: 3%;
+}
+
+.content {
+  max-width: 1200px;
+}
+
+.row:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.center, .content, #container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[class^="col-"] {
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 0px) {
+  [class^="col-"] {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  [class^="col-"] {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width: 992px) {
+  [class^="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  [class^="col-"] {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 0px) {
+  .col-xs-1 {
+    width: 8.33333%;
+  }
+  .col-xs-2 {
+    width: 16.66667%;
+  }
+  .col-xs-3 {
+    width: 25%;
+  }
+  .col-xs-4 {
+    width: 33.33333%;
+  }
+  .col-xs-5 {
+    width: 41.66667%;
+  }
+  .col-xs-6 {
+    width: 50%;
+  }
+  .col-xs-7 {
+    width: 58.33333%;
+  }
+  .col-xs-8 {
+    width: 66.66667%;
+  }
+  .col-xs-9 {
+    width: 75%;
+  }
+  .col-xs-10 {
+    width: 83.33333%;
+  }
+  .col-xs-11 {
+    width: 91.66667%;
+  }
+  .col-xs-12 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-s-1 {
+    width: 8.33333%;
+  }
+  .col-s-2 {
+    width: 16.66667%;
+  }
+  .col-s-3 {
+    width: 25%;
+  }
+  .col-s-4 {
+    width: 33.33333%;
+  }
+  .col-s-5 {
+    width: 41.66667%;
+  }
+  .col-s-6 {
+    width: 50%;
+  }
+  .col-s-7 {
+    width: 58.33333%;
+  }
+  .col-s-8 {
+    width: 66.66667%;
+  }
+  .col-s-9 {
+    width: 75%;
+  }
+  .col-s-10 {
+    width: 83.33333%;
+  }
+  .col-s-11 {
+    width: 91.66667%;
+  }
+  .col-s-12 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-m-1 {
+    width: 8.33333%;
+  }
+  .col-m-2 {
+    width: 16.66667%;
+  }
+  .col-m-3 {
+    width: 25%;
+  }
+  .col-m-4 {
+    width: 33.33333%;
+  }
+  .col-m-5 {
+    width: 41.66667%;
+  }
+  .col-m-6 {
+    width: 50%;
+  }
+  .col-m-7 {
+    width: 58.33333%;
+  }
+  .col-m-8 {
+    width: 66.66667%;
+  }
+  .col-m-9 {
+    width: 75%;
+  }
+  .col-m-10 {
+    width: 83.33333%;
+  }
+  .col-m-11 {
+    width: 91.66667%;
+  }
+  .col-m-12 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-l-1 {
+    width: 8.33333%;
+  }
+  .col-l-2 {
+    width: 16.66667%;
+  }
+  .col-l-3 {
+    width: 25%;
+  }
+  .col-l-4 {
+    width: 33.33333%;
+  }
+  .col-l-5 {
+    width: 41.66667%;
+  }
+  .col-l-6 {
+    width: 50%;
+  }
+  .col-l-7 {
+    width: 58.33333%;
+  }
+  .col-l-8 {
+    width: 66.66667%;
+  }
+  .col-l-9 {
+    width: 75%;
+  }
+  .col-l-10 {
+    width: 83.33333%;
+  }
+  .col-l-11 {
+    width: 91.66667%;
+  }
+  .col-l-12 {
+    width: 100%;
+  }
+}
+
+/* <div class="row">    
+            <div class="content"> 
+                <div class="col-l-4 col-m-4 col-s-6 col-xs-12"> 
+                  1
+                </div>    
+                <div class="col-l-4 col-m-4 col-s-6 col-xs-12">
+                 1
+                 </div>    
+                <div class="col-l-4 col-m-4 col-s-6 col-xs-12">
+                  3
+                </div>            
+            </div>    
+    </div>*/
+h1 {
+  color: #5e5d5d;
+  margin-top: 40px;
+}
+
+h2 {
+  color: #5e5d5d;
+}
+
+.center, .content, #container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: solid gray 1px;
+  border-radius: 5px;
+}
+
+input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: solid gray 1px;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  padding: 10px;
+  border: solid gray 1px;
+  border-radius: 5px;
+  background: #ff7f29;
+}
+
+body {
+  width: 100%;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  margin: 0;
+  height: 42px;
+  background-color: #383838;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 400;
+}
+
+.navbar .menu {
+  float: right;
+  width: 45%;
+}
+
+.navbar .brand {
+  float: left;
+  padding: 7px 0 0 0px;
+}
+
+.navbar .brand img {
+  margin-top: -7px;
+  width: 100px;
+}
+
+.navbar .brand-text {
+  padding-top: 9px;
+  line-height: 0.8;
+  width: 65%;
+  color: white;
+  text-align: left;
+  float: left;
+}
+
+.navbar .brand-text span {
+  font-size: 10px;
+}
+
+#desktopMenu {
+  display: none;
+  list-style-type: none;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+#desktopMenu li {
+  float: right;
+}
+
+#desktopMenu li a {
+  display: block;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+}
+
+#footer {
+  margin: 0;
+  padding: 5px 10px 5px 10px;
+  background-color: #5A84AF;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 400;
+  text-align: center;
+  color: white;
+}
+
+#footer #navBestilling {
+  float: left;
+  width: 50%;
+  border-right: solid #969fc7 1px;
+}
+
+#footer #navKontakt {
+  float: left;
+  width: 50%;
+}
+
+#menuBestilling, #menuKontakt {
+  position: fixed;
+  z-index: 399;
+  bottom: 20px;
+  display: none;
+  background-color: #f5f4f4;
+  width: 100%;
+  padding: 10px 0px 20px 0px;
+}
+
+#menuBestilling ul, #menuKontakt ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menuBestilling li, #menuKontakt li {
+  border-bottom: 1px solid #e4e3e3;
+  cursor: pointer;
+  padding: 7px;
+}
+
+#menuBestilling li a, #menuKontakt li a {
+  display: block;
+  padding: 0px;
+  color: #808080;
+  text-decoration: none;
+}
+
+#toggleMenu {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  float: right;
+  margin-top: 0px;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#menu-panel {
+  position: relative;
+  z-index: 300;
+  display: none;
+  background-color: #f5f4f4;
+  width: 100%;
+  padding: 30px 0px 20px 0px;
+}
+
+#menu-panel #mobileMenu {
+  list-style-type: none;
+  padding: 0;
+}
+
+#menu-panel #mobileMenu li {
+  border-bottom: 1px solid #e4e3e3;
+  cursor: pointer;
+}
+
+#menu-panel #mobileMenu li a {
+  display: block;
+  padding: 8px;
+  color: #808080;
+  text-decoration: none;
+}
+
+#container {
+  width: 1200px;
+  padding-top: 30px;
+  background-color: white;
+  height: calc(100% - 30px);
+}
+
+/*  TABLET LANDSKAB OG LILE DESKTOP - 992px og op
+        
+            --------------------------------------- */
+@media only screen and (min-width: 992px) {
+  #toggleMenu {
+    display: none;
+  }
+  #desktopMenu {
+    display: block;
+  }
+}
+/*# sourceMappingURL=Main.css.map */

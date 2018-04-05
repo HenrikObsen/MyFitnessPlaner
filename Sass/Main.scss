@@ -1,0 +1,187 @@
+@import "schared";
+
+body{
+    width:100%;
+    margin:0px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+//***************************** Navbar and desktop menu *********************************************
+.navbar {
+    margin: 0;
+    height: 42px;
+    background-color: $mainGray;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 400;
+
+    .menu {
+        float: right;
+        width: 45%;
+    }
+
+    .brand {
+        
+        float: left;
+        padding: 7px 0 0 0px;
+        img{
+            margin-top:-7px;
+            width:100px;
+        }
+    }
+
+    .brand-text {
+        padding-top: 9px;
+        line-height: 0.8;
+        width: 65%;
+        color: white;
+        text-align: left;
+        float: left;
+
+        span {
+            font-size: 10px;
+        }
+    }
+}
+
+#desktopMenu {
+    
+    display: none;
+    list-style-type: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+
+    li {
+        float: right;
+    }
+
+    li a {
+        display: block;
+        padding: 8px;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+#footer {
+    margin: 0;
+    padding: 5px 10px 5px 10px;
+    background-color: #5A84AF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 400;
+    text-align: center;
+    color: white;
+
+    #navBestilling {
+        float: left;
+        width: 50%;
+        border-right: solid rgb(150, 159, 199) 1px;
+    }
+
+    #navKontakt {
+        float: left;
+        width: 50%;
+    }
+}
+
+#menuBestilling, #menuKontakt {
+    position: fixed;
+    z-index: 399;
+    bottom: 20px;
+    display: none;
+    background-color: rgb(245, 244, 244);
+    width: 100%;
+    padding: 10px 0px 20px 0px;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    li {
+        border-bottom: 1px solid rgb(228, 227, 227);
+        cursor: pointer;
+        padding: 7px;
+    }
+
+    li a {
+        display: block;
+        padding: 0px;
+        color: #808080;
+        text-decoration: none;
+    }
+}
+//***************************** Mobile Menu *********************************************
+#toggleMenu {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    float: right;
+    margin-top: 0px;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#menu-panel {
+    position: relative;
+    z-index: 300;
+    display: none;
+    background-color: rgb(245, 244, 244);
+    width: 100%;
+    padding: 30px 0px 20px 0px;
+
+    #mobileMenu {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            border-bottom: 1px solid rgb(228, 227, 227);
+            cursor: pointer;
+        }
+
+        li a {
+            display: block;
+            padding: 8px;
+            color: #808080;
+            text-decoration: none;
+        }
+    }
+}
+
+//***************************** Content aray *********************************************
+#container {
+    @extend .center;
+    width: 1200px;
+    padding-top: 30px;
+    background-color: white;
+    height: calc(100% - 30px);
+}
+
+
+
+
+/*  TABLET LANDSKAB OG LILE DESKTOP - 992px og op
+        
+            --------------------------------------- */
+
+@media only screen and (min-width: 992px) {
+
+    #toggleMenu {
+        display: none;
+    }
+
+    #desktopMenu {
+        display: block;
+    }
+      
+
+}
+
+

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../Sass/Respond.scss"
+    ],
+    "names": [],
+    "file": "Respond.min.css"
+}
