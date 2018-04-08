@@ -52,7 +52,7 @@
     
                 $.ajax({
                     type: 'GET',
-                    url: 'http://localhost:57693/api/User/Login/' + bruger + '/' + pas,
+                    url: 'http://kd.henrikobsen.dk/api/User/Login/' + bruger + '/' + pas,
                     success: function (data) {
                         if (data.ID >0) {
                             window.localStorage.setItem("user", data.ID);

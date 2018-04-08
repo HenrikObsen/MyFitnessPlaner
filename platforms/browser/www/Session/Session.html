@@ -94,16 +94,16 @@
             // console.log("ready!");
             $("#loader").show();
           
-            var id = window.localStorage.getItem("id");
+            var id = window.localStorage.getItem("pgm");
 
             $.ajax({
                 type: 'GET',
-                url: 'http://localhost:57693/api/Program/GetFullProgram/' + id,
+                url: 'http://kd.henrikobsen.dk/api/Program/GetFullProgram/' + id,
                 success: function (data) {
                     $("#loader").hide();                    
                     $("#pgmContainer").empty();
 
-                $("#headline").html(data.program.Name);
+                $("#headline").html("<i class=\"fa fa-backward\" aria-hidden=\"true\" onclick=\"history.go(-1);return false;\"></i> " + data.program.Name);
 
                  let res ="";
                    
@@ -115,7 +115,7 @@
                                     res += "<div class=\"panel\"><table><tr><th>Execise</th><th>Sets</th><th>Reps</th><th>Pause</th></tr>";
                                             $.each(pgm.sessionItems, function (i, ses) {
                                                     
-                                                res += "<tr class=\"sessionItem\" onclick=\"navigate('../Session/SessionItem'," + ses.ID + ")\"><td>" + ses.Name + "</td><td>" + ses.Sets + "</td><td>" + ses.Reps + "</td><td>" + ses.Pause + " sec</td></tr>";    
+                                                res += "<tr class=\"sessionItem\" onclick=\"navigate('../Session/SessionItem'," + ses.ID + ",'sItem')\"><td>" + ses.Name + "</td><td>" + ses.Sets + "</td><td>" + ((ses.Reps == '0') ? 'max' : ses.Reps) + "</td><td>" + ses.Pause + " sec</td></tr>";    
                                             });
                                             res += "</table></div>";
                            

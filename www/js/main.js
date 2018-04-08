@@ -8,6 +8,14 @@ function navigate(loca, id) {
     window.location.assign(loca + ".html");
 }
 
+function navigate(loca, id, name) {
+    //alert(loca + id);
+    if (id > 0) {
+        window.localStorage.setItem(name, id);
+    }
+    window.location.assign(loca + ".html");
+}
+
 $(document).ready(function () {
     $("#toggleMenu").click(function () {
         $("#menu-panel").slideToggle("slow");
