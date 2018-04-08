@@ -6,13 +6,13 @@
   max-width: 1200px;
 }
 
-.row:after {
+.row:after, .wrapper:after {
   display: block;
   clear: both;
   content: '';
 }
 
-.center, .content, #logoBox, #formBox {
+.center, .content {
   margin-left: auto;
   margin-right: auto;
 }
@@ -235,7 +235,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.row:after {
+.row:after, .wrapper:after {
   content: "";
   display: table;
   clear: both;
@@ -252,7 +252,7 @@ h2 {
   font-size: 1em;
 }
 
-.center, .content, #logoBox, #formBox {
+.center, .content {
   margin-left: auto;
   margin-right: auto;
 }
@@ -285,35 +285,54 @@ input[type="submit"] {
   background: #ff7f29;
 }
 
-input {
-  margin-top: 10px;
+#itemImage {
+  width: 100%;
 }
 
-#Logo {
-  width: 90%;
-}
-
-#logoBox {
-  width: 90%;
-}
-
-#formBox {
-  width: 300px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -60%);
-}
-
-@media (min-width: 992px) {
-  #formBox {
-    width: 600px;
-  }
-}
-
-.alert {
+#msg {
+  width: 100%;
+  text-align: center;
+  font-size: 1.7em;
   font-weight: bold;
-  color: red;
+  color: #ff7f29;
+  margin: 7px 0px;
 }
-/*# sourceMappingURL=index.css.map */
+
+.row:after, .wrapper:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.wrapper {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.wrapper #infoBox {
+  float: left;
+  width: 30%;
+  border: solid grey 1px;
+  border-radius: 5px;
+  margin-right: 7px;
+  padding: 7px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.wrapper #btnBox {
+  float: right;
+  width: 60%;
+  height: 100%;
+}
+
+.wrapper #btnBox button {
+  width: 100%;
+  height: 77px;
+  background: green;
+  color: white;
+  font-weight: bold;
+  border: solid grey 1px;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=SessionItem.css.map */

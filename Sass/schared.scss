@@ -2,14 +2,37 @@
 
 $mainGray: #383838;
 $mainOrange: #ff7f29;
+$base-font: 1em;
+
+html {
+    font-size: 16px; /* our base font size */
+}
+
+body{
+    width:100%;
+    margin:0px;    
+    font-size: 80%; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+%clearfix {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
 //***************************** Text and headlines *********************************************
 h1 {
     color: #5e5d5d;
     margin-top: 40px;
+    font-size: $base-font*2;
 }
 
 h2 {
     color: #5e5d5d;
+    font-size: $base-font*1;
 }
 
 .center {

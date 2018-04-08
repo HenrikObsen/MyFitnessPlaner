@@ -12,7 +12,7 @@
   content: '';
 }
 
-.center, .content, #logoBox, #formBox {
+.center, .content {
   margin-left: auto;
   margin-right: auto;
 }
@@ -252,7 +252,7 @@ h2 {
   font-size: 1em;
 }
 
-.center, .content, #logoBox, #formBox {
+.center, .content {
   margin-left: auto;
   margin-right: auto;
 }
@@ -285,35 +285,58 @@ input[type="submit"] {
   background: #ff7f29;
 }
 
-input {
-  margin-top: 10px;
-}
-
-#Logo {
-  width: 90%;
-}
-
-#logoBox {
-  width: 90%;
-}
-
-#formBox {
-  width: 300px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -60%);
-}
-
-@media (min-width: 992px) {
-  #formBox {
-    width: 600px;
-  }
-}
-
-.alert {
+.accordion {
+  background-color: #383838;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
   font-weight: bold;
-  color: red;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  border: solid black 1px;
+  margin: 2px 0;
 }
-/*# sourceMappingURL=index.css.map */
+
+.active, .accordion:hover {
+  background-color: #525252;
+}
+
+.panel {
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.panel table {
+  width: 100%;
+  font-size: -12px;
+}
+
+.panel table th {
+  text-align: left;
+  padding: 5px;
+}
+
+.panel table td {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.panel table tr:nth-child(even) {
+  background: #CCC;
+}
+
+.panel table tr:nth-child(odd) {
+  background: #f1f1f1;
+}
+
+.panel2 {
+  border: solid #383838 1px;
+  margin: 5px 0;
+}
+/*# sourceMappingURL=Session.css.map */

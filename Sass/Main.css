@@ -12,7 +12,7 @@
   content: '';
 }
 
-.center, .content, #container {
+.center, .content, #contentcontainer {
   margin-left: auto;
   margin-right: auto;
 }
@@ -223,16 +223,36 @@
                 </div>            
             </div>    
     </div>*/
+html {
+  font-size: 16px;
+  /* our base font size */
+}
+
+body {
+  width: 100%;
+  margin: 0px;
+  font-size: 80%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 h1 {
   color: #5e5d5d;
   margin-top: 40px;
+  font-size: 2em;
 }
 
 h2 {
   color: #5e5d5d;
+  font-size: 1em;
 }
 
-.center, .content, #container {
+.center, .content, #contentcontainer {
   margin-left: auto;
   margin-right: auto;
 }
@@ -265,12 +285,6 @@ input[type="submit"] {
   background: #ff7f29;
 }
 
-body {
-  width: 100%;
-  margin: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .navbar {
   margin: 0;
   height: 42px;
@@ -283,7 +297,7 @@ body {
 
 .navbar .menu {
   float: right;
-  width: 45%;
+  width: 65%;
 }
 
 .navbar .brand {
@@ -299,7 +313,7 @@ body {
 .navbar .brand-text {
   padding-top: 9px;
   line-height: 0.8;
-  width: 65%;
+  width: 45%;
   color: white;
   text-align: left;
   float: left;
@@ -416,11 +430,30 @@ body {
   text-decoration: none;
 }
 
-#container {
-  width: 1200px;
-  padding-top: 30px;
+#contentcontainer {
+  width: calc(100% - 40px);
+  margin: 60px 20px 0 20px;
   background-color: white;
-  height: calc(100% - 30px);
+  height: calc(100% - 60px);
+}
+
+#loader {
+  width: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -80%);
+}
+
+.prgItemBox {
+  cursor: pointer;
+  width: 100%;
+  border-bottom: solid black 1px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1em;
+  padding-bottom: 3px;
 }
 
 /*  TABLET LANDSKAB OG LILE DESKTOP - 992px og op

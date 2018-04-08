@@ -1,6 +1,4 @@
-  // if (window.localStorage.getItem("user") == null) {
-        //     window.location.assign("../index.html");
-        // }
+
 
 function navigate(loca, id) {
     //alert(loca + id);
@@ -43,3 +41,7 @@ $(document).ready(function () {
         $("#menuKontakt").slideUp("slow");
     });
 });
+
+        // if (window.localStorage.getItem("user") == null) {
+        //     window.location.assign("../index.html");
+        // }
