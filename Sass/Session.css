@@ -1,228 +1,4 @@
-.row + .row {
-  margin-top: 3%;
-}
-
-.content {
-  max-width: 1200px;
-}
-
-.row:after {
-  display: block;
-  clear: both;
-  content: '';
-}
-
-.center, .content {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-[class^="col-"] {
-  float: left;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@media (min-width: 0px) {
-  [class^="col-"] {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-@media (min-width: 768px) {
-  [class^="col-"] {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media (min-width: 992px) {
-  [class^="col-"] {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-@media (min-width: 1200px) {
-  [class^="col-"] {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media (min-width: 0px) {
-  .col-xs-1 {
-    width: 8.33333%;
-  }
-  .col-xs-2 {
-    width: 16.66667%;
-  }
-  .col-xs-3 {
-    width: 25%;
-  }
-  .col-xs-4 {
-    width: 33.33333%;
-  }
-  .col-xs-5 {
-    width: 41.66667%;
-  }
-  .col-xs-6 {
-    width: 50%;
-  }
-  .col-xs-7 {
-    width: 58.33333%;
-  }
-  .col-xs-8 {
-    width: 66.66667%;
-  }
-  .col-xs-9 {
-    width: 75%;
-  }
-  .col-xs-10 {
-    width: 83.33333%;
-  }
-  .col-xs-11 {
-    width: 91.66667%;
-  }
-  .col-xs-12 {
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-  .col-s-1 {
-    width: 8.33333%;
-  }
-  .col-s-2 {
-    width: 16.66667%;
-  }
-  .col-s-3 {
-    width: 25%;
-  }
-  .col-s-4 {
-    width: 33.33333%;
-  }
-  .col-s-5 {
-    width: 41.66667%;
-  }
-  .col-s-6 {
-    width: 50%;
-  }
-  .col-s-7 {
-    width: 58.33333%;
-  }
-  .col-s-8 {
-    width: 66.66667%;
-  }
-  .col-s-9 {
-    width: 75%;
-  }
-  .col-s-10 {
-    width: 83.33333%;
-  }
-  .col-s-11 {
-    width: 91.66667%;
-  }
-  .col-s-12 {
-    width: 100%;
-  }
-}
-
-@media (min-width: 992px) {
-  .col-m-1 {
-    width: 8.33333%;
-  }
-  .col-m-2 {
-    width: 16.66667%;
-  }
-  .col-m-3 {
-    width: 25%;
-  }
-  .col-m-4 {
-    width: 33.33333%;
-  }
-  .col-m-5 {
-    width: 41.66667%;
-  }
-  .col-m-6 {
-    width: 50%;
-  }
-  .col-m-7 {
-    width: 58.33333%;
-  }
-  .col-m-8 {
-    width: 66.66667%;
-  }
-  .col-m-9 {
-    width: 75%;
-  }
-  .col-m-10 {
-    width: 83.33333%;
-  }
-  .col-m-11 {
-    width: 91.66667%;
-  }
-  .col-m-12 {
-    width: 100%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .col-l-1 {
-    width: 8.33333%;
-  }
-  .col-l-2 {
-    width: 16.66667%;
-  }
-  .col-l-3 {
-    width: 25%;
-  }
-  .col-l-4 {
-    width: 33.33333%;
-  }
-  .col-l-5 {
-    width: 41.66667%;
-  }
-  .col-l-6 {
-    width: 50%;
-  }
-  .col-l-7 {
-    width: 58.33333%;
-  }
-  .col-l-8 {
-    width: 66.66667%;
-  }
-  .col-l-9 {
-    width: 75%;
-  }
-  .col-l-10 {
-    width: 83.33333%;
-  }
-  .col-l-11 {
-    width: 91.66667%;
-  }
-  .col-l-12 {
-    width: 100%;
-  }
-}
-
-/* <div class="row">    
-            <div class="content"> 
-                <div class="col-l-4 col-m-4 col-s-6 col-xs-12"> 
-                  1
-                </div>    
-                <div class="col-l-4 col-m-4 col-s-6 col-xs-12">
-                 1
-                 </div>    
-                <div class="col-l-4 col-m-4 col-s-6 col-xs-12">
-                  3
-                </div>            
-            </div>    
-    </div>*/
+@import url(c:\Users\hto\Source\Repos\MyFitnessPlaner\Sass\Grid.css);
 html {
   font-size: 16px;
   /* our base font size */
@@ -235,7 +11,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.row:after {
+.accordion:after {
   content: "";
   display: table;
   clear: both;
@@ -252,7 +28,7 @@ h2 {
   font-size: 1em;
 }
 
-.center, .content {
+.center {
   margin-left: auto;
   margin-right: auto;
 }
@@ -285,13 +61,25 @@ input[type="submit"] {
   background: #ff7f29;
 }
 
+textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: solid gray 1px;
+  border-radius: 5px;
+}
+
+label {
+  padding-top: 30px;
+  font-weight: bold;
+}
+
 .accordion {
   background-color: #383838;
   color: white;
   cursor: pointer;
   padding: 10px;
   font-weight: bold;
-  width: 100%;
+  width: calc(100%-10px);
   border: none;
   text-align: left;
   outline: none;
@@ -299,6 +87,17 @@ input[type="submit"] {
   transition: 0.4s;
   border: solid black 1px;
   margin: 2px 0;
+}
+
+.accordion .itemName {
+  float: left;
+  width: 70%;
+}
+
+.accordion .itemBoxEdit {
+  float: right;
+  width: 25%;
+  text-align: right;
 }
 
 .active, .accordion:hover {

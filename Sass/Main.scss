@@ -168,16 +168,59 @@
    /* bring your own prefixes */
    transform: translate(-50%, -80%);
 }
-
-.prgItemBox{
+.fa-plus{
     cursor: pointer;
+}
+
+/*------------------ Progsam.htm ----------------------*/
+.prgItemBox{
+    @extend %clearfix;
+    
     width: 100%;
     border-bottom: solid black 1px;
     margin-bottom: 20px;
     font-weight: bold;
-    font-size: $base-font*1;
+    font-size: $base-font*1.3;
     padding-bottom: 3px;
+
+    .prgItemBoxName{
+        cursor: pointer;
+        float: left;
+        width: 75%;
+    }
+    .prgItemBoxEdit{
+        float: right;
+        width: 20%;
+        color: $mainOrange;
+        text-align: right;
+    }
 }
+.wrapper{
+    @extend %clearfix;
+    width: 100%;    
+    margin-bottom: 20px;
+
+    #headline{
+        width:60%;
+        float: left;
+    }
+
+    #pgmAdd{
+        text-align: right;
+        width:20%;        
+        float: right;
+        font-size: $base-font*2;
+        color: $mainOrange;
+    }
+
+    h1 {
+        margin: 0px;
+    }
+
+
+}
+
+
 /*  TABLET LANDSKAB OG LILE DESKTOP - 992px og op
         
             --------------------------------------- */
@@ -194,5 +237,3 @@
       
 
 }
-
-

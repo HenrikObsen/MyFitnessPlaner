@@ -45,6 +45,10 @@
 <body>
         <script type="text/javascript">
 
+                    // if (window.localStorage.getItem("user")!= null) {
+                    //     window.location.assign("Program/ProgramList.html");
+                    // } 
+
             function Login() {
     
                 var pas = $("#pass").val();
@@ -54,10 +58,12 @@
                     type: 'GET',
                     url: 'http://kd.henrikobsen.dk/api/User/Login/' + bruger + '/' + pas,
                     success: function (data) {
+''
                         if (data.ID >0) {
                             window.localStorage.setItem("user", data.ID);
                             window.localStorage.setItem("role", data.Role);
                             window.localStorage.setItem("name", data.Name);
+                            window.localStorage.setItem("admin", "on");
 
                             window.location.assign("Program/ProgramList.html");
                         } else {
@@ -66,9 +72,7 @@
                     }
                 });
 
-                    if (window.localStorage.getItem("user")!== null) {
-                        window.location.assign("Program/ProgramList.html");
-                    } 
+            
             }
         </script>
 
@@ -76,12 +80,13 @@
                     <div id="formBox" class="text-center"> 
                             <div id="logoBox"><img src="img/MfpLogo.png" id="Logo" /></div>
                             <form onsubmit="return Login(), false;">
-                                    <input id="bruger" type="text" placeholder="Indtast dit brugernavn...">
+                                    <input id="bruger" type="text" placeholder="Indtast dit brugernavn..." required>
                                     <br />
-                                    <input id="pass"  type="password" placeholder="Indtast dit password">
+                                    <input id="pass"  type="password" placeholder="Indtast dit password" required>
                                     <br />
                                     <input id="subBut" type="submit" value="Login" />
                             </form> 
+                            <br/>
                             <div id="msg"></div>
                     </div> 
                    

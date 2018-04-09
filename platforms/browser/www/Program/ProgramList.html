@@ -82,7 +82,11 @@
             </nav>
          <section id="contentcontainer">
                 <img id="loader" class="center" src="../img/transfer.gif" />
-                <h1><i class="fa fa-backward" aria-hidden="true" onclick="history.go(-1);return false;"></i> Programs</h1>                
+                <div class="wrapper">
+                    <div id="headline"><h1><i class="fa fa-backward" aria-hidden="true" onclick="history.go(-1);return false;"></i> Programs</h1></div>
+                    <div id="pgmAdd"><i class="fa fa-plus" onclick="navigate('AddProgram',0);"></i></div>
+                </div>
+                              
                 <div id="pgmContainer"></div>
          </section>
        
@@ -93,6 +97,7 @@
             // console.log("ready!");
             $("#loader").show();
           
+            var admin = window.localStorage.getItem("admin");
             var id = window.localStorage.getItem("user");
 
             $.ajax({
@@ -105,7 +110,7 @@
                     
                     $.each(data, function (i, pgm) {
                         
-                           res += "<div class=\"prgItemBox\" onclick=\"navigate('../Session/Session'," + pgm.ID + ",'pgm')\"><i class=\"fa fa-list-alt\"></i>  " + pgm.Name + "</div>";                         
+                           res += "<div class=\"prgItemBox\"><div class=\"prgItemBoxName\" onclick=\"navigate('../Session/Session'," + pgm.ID + ",'pgm')\"><i class=\"fa fa-list-alt\"></i>  " + pgm.Name + "</div><div class=\"prgItemBoxEdit\"><i class=\"fa fa-pencil\" onclick=\"navigate('EditProgram'," + pgm.ID + ",'edit');\"></i> <i class=\"fa fa-trash\"></i></div></div>";                         
 
                     });
 

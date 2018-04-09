@@ -67,3 +67,14 @@ input[type="submit"]{
     border-radius: 5px;
     background: $mainOrange;
 }
+
+textarea{
+    width:calc(100% - 20px);
+    padding:10px;
+    border: solid gray 1px;
+    border-radius: 5px;
+}
+label{
+    padding-top: 30px; 
+    font-weight: bold;
+}

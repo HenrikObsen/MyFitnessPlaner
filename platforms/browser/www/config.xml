@@ -6,12 +6,12 @@
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>MyFitnessPlaner</name>
+    <name>My Fitness Planner</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+      Dit tpersonlige træningsprogram lige ved hånden.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="hto@e-train.dk" href="http://e-train.dk">
+       E-train I/S
     </author>
     <content src="index.html" />
     <access origin="*" />

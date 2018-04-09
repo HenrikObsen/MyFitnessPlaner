@@ -1,4 +1,8 @@
 
+function navigate(loca) {
+    
+       window.location.assign(loca + ".html");
+}
 
 function navigate(loca, id) {
     //alert(loca + id);
@@ -8,10 +12,10 @@ function navigate(loca, id) {
     window.location.assign(loca + ".html");
 }
 
-function navigate(loca, id, name) {
+function navigate(loca, value, name) {
     //alert(loca + id);
-    if (id > 0) {
-        window.localStorage.setItem(name, id);
+    if (value > 0) {
+        window.localStorage.setItem(name, value);
     }
     window.location.assign(loca + ".html");
 }

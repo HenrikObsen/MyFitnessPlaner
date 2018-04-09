@@ -81,46 +81,88 @@
                 </ul>
             </nav>
          <section id="contentcontainer">
-                <img id="loader" class="center" src="../img/transfer.gif" />
-                <div class="wrapper">
-                    <div id="headline"><h1><i class="fa fa-backward" aria-hidden="true" onclick="history.go(-1);return false;"></i> Programs</h1></div>
-                    <div id="pgmAdd"><i class="fa fa-plus" onclick="navigate('AddProgram',0);"></i></div>
-                </div>
-                              
-                <div id="pgmContainer"></div>
+               
+               
+                <h1><i class="fa fa-backward" aria-hidden="true" onclick="history.go(-1);return false;"></i> Edit Program</h1>
+              
+                <form onsubmit="return SaveProg(), false;">                       
+                       
+                            <label for="Name">Program navn:</label><br/>
+                            <input type="text" id="Name">                                           
+                            <br/>
+                            <label for="Notes">Beskrivelse:</label><br/>
+                            <textarea rows="5" id="Notes"></textarea>                        
+                            <br/>
+                            <input type="submit" value="Gem" />
+                            <input id="Created" type="hidden" />
+                            <input id="ID" type="hidden" />
+                            <input id="UserID" type="hidden" />
+               
+                </form>
+                    <div id="msg"></div>
          </section>
        
     <script>
-      
-        
-        $(function () {
-            // console.log("ready!");
-            $("#loader").show();
-          
-            var admin = window.localStorage.getItem("admin");
-            var id = window.localStorage.getItem("user");
 
+        //var domain = "http://kd.henrikobsen.dk/"
+var domain = "http://localhost:57693/";
+var admin = window.localStorage.getItem("admin");
+
+
+
+        $(function () {         
             $.ajax({
                 type: 'GET',
-                url: 'http://kd.henrikobsen.dk/api/Program/GetAll/' + id,
+                url: domain + 'api/Program/Get/' + window.localStorage.getItem("edit"),
                 success: function (data) {
-                    $("#loader").hide();                    
-                    $("#pgmContainer").empty();
-                    let res ="";
-                    
-                    $.each(data, function (i, pgm) {
-                        
-                           res += "<div class=\"prgItemBox\"><div class=\"prgItemBoxName\" onclick=\"navigate('../Session/Session'," + pgm.ID + ",'pgm')\"><i class=\"fa fa-list-alt\"></i>  " + pgm.Name + "</div><div class=\"prgItemBoxEdit\"><i class=\"fa fa-pencil\" onclick=\"navigate('EditProgram'," + pgm.ID + ",'edit');\"></i> <i class=\"fa fa-trash\"></i></div></div>";                         
-
-                    });
-
-                    $("#pgmContainer").append(res);
-
-                   
+                    $('#Notes').val(data.Notes);
+                    $('#Name').val(data.Name);                   
+                    $('#UserID').val(data.UserID);                   
+                    $('#ID').val(data.ID);                   
+                    $('#Created').val(data.Created);                   
                 }
             });
-        
         });
+
+
+            
+function Program(ID, UserID, Name, Created, Notes) {
+
+    this.ID = ID;
+    this.UserID = UserID;
+    this.Name = Name;
+    this.Created = Created;
+    this.Notes = Notes;
+}
+
+function SaveProg() {
+
+    var ID = $('#ID').val();
+    var UserID = $('#UserID').val();
+    var Name = $('#Name').val();
+    var Created = $('#Created').val();
+    var Notes = $('#Notes').val();
+    var p = new Program(ID, UserID, Name, Created, Notes);
+
+    $.ajax({
+        type: 'POST',
+        url: domain + 'api/Program/Update',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: JSON.stringify(p),
+        success: function (hest) {
+            navigate('ProgramList');
+        },
+        error: function (jqXHR, exception) {
+            var msg = 'Status: ' + jqXHR.status + "<br/>Exeption: " + exception;
+            $('#mst').html(msg);
+        }
+    });
+
+}
+
+        
+      
     </script>
  <!--<script type="text/javascript" src="../cordova.js"></script>-->
  <script type="text/javascript" src="../js/index.js"></script>

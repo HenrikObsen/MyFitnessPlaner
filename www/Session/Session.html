@@ -83,8 +83,11 @@
             </nav>
     <section id="contentcontainer">
         <img id="loader" class="center" src="../img/transfer.gif" />
-               
-        <h1 id="headline"></h1>        
+        <div class="wrapper">
+                <div id="headline"><h1 id="headl"></h1></div>
+                <div id="pgmAdd"><i class="fa fa-plus"></i></div>
+            </div>      
+            
         <div id="pgmContainer"></div>
     </section>
     <script>
@@ -103,7 +106,7 @@
                     $("#loader").hide();                    
                     $("#pgmContainer").empty();
 
-                $("#headline").html("<i class=\"fa fa-backward\" aria-hidden=\"true\" onclick=\"history.go(-1);return false;\"></i> " + data.program.Name);
+                $("#headl").html("<i class=\"fa fa-backward\" aria-hidden=\"true\" onclick=\"history.go(-1);return false;\"></i> " + data.program.Name);
 
                  let res ="";
                    
@@ -111,7 +114,7 @@
                             
                     $.each(data.sessionsDetails, function (i, pgm) {
                         
-                           res +="<button class=\"accordion\">" + pgm.session.Name +"</button>";                         
+                           res +="<div class=\"accordion\"><div class=\"itemName\">" + pgm.session.Name +"</div><div class=\"itemBoxEdit\"><i class=\"fa fa-plus\"></i> <i class=\"fa fa-pencil\"></i> <i class=\"fa fa-trash\"></i></div></div>";                         
                                     res += "<div class=\"panel\"><table><tr><th>Execise</th><th>Sets</th><th>Reps</th><th>Pause</th></tr>";
                                             $.each(pgm.sessionItems, function (i, ses) {
                                                     
