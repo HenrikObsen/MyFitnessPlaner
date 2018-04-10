@@ -237,3 +237,47 @@
       
 
 }
+
+//*********************** Alert ***************************
+
+#popup{
+    @extend .center;
+    width: calc(100% - 80px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    /* bring your own prefixes */
+    transform: translate(-50%, -60%);
+    background: lightgray;
+    border: solid gray 1px;
+    border-radius: 5px;
+    min-height: 100px;
+    text-align: center;
+    max-width: 400px;
+    
+    button{
+        min-width: 70px;
+        margin: 10px 5px;
+        padding:7px 12px;
+        border: solid gray 1px;
+        border-radius: 5px;
+        color:white;
+        background: $mainOrange;
+    }
+
+    h2{
+        font-weight: bold;
+        margin:10px;
+        font-size: $base-font*2;
+    }
+    input{
+        margin:10px 0;
+    }
+
+    #msg{
+        height: 20px;
+        color: red;
+        font-weight: bold;
+    }
+}

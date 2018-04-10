@@ -108,9 +108,12 @@
 
         $(function () {
        
+            let d = new Date().toLocaleDateString().replace('/','-');
+                      
             
             var id = window.localStorage.getItem("sItem");
-            var domain = "http://kd.henrikobsen.dk/"
+            let domain = "http://kd.henrikobsen.dk/"
+            //let domain = 'http://localhost:57693/';
             let pause = 0;
             let set =  1;
             let sets = 0;
@@ -174,17 +177,30 @@
         
 
             $("#btnTime").click(function() {
+                if(set < sets){
                 var timeleft = pause;
                 var downloadTimer = setInterval(function(){
                     document.getElementById("progressBar").value = pause - --timeleft;
                     $("#btnTime").html("Pause " + (pause - timeleft) + " sec");
+                                      
+                
+
+
                     if (timeleft <= 0) {  
+                       
                         set = set + 1;
+
+                        if (set >= sets)
+                        {
+                            $("#btnTime").html("DONE!");      
+                            $("#msg").html("Now running last set");                           
+                        }
 
                         if (set >= sets+1)
                         {
-                            $("#btnTime").prop("disabled",true);
-                            $("#msg").html("Exercise completed!");   
+                            //$("#btnTime").prop("disabled",true);
+                            //$("#msg").html("Exercise completed! 1"); 
+                         
                         }
                         else{
                             $("#msg").html("Now running set " + set + " of " + sets);   
@@ -194,10 +210,24 @@
                         audio.play();              
                         clearInterval(downloadTimer);  
                     } 
+                
                     //if(timeleft <= 0)
                     //clearInterval(downloadTimer);                    
                 },1000);
+            }
+            else{
+                    $("#btnTime").prop("disabled",true);
+                    $("#msg").html("Exercise completed!");     
 
+                       
+                                $.ajax({
+                                    type: 'GET',
+                                    url: domain +'api/Session/SetLastRun/' + id + "/" + d.replace('/','-'),
+                                    success: function (data) { 
+                                    alert(data);
+                                    }
+                                });      
+            }
         });
 
         $("#save").click(function() {

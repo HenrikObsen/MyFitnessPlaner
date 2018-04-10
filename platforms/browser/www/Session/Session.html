@@ -96,12 +96,15 @@
         $(function () {
             // console.log("ready!");
             $("#loader").show();
+            var today = new Date().toLocaleDateString();
           
             var id = window.localStorage.getItem("pgm");
+           let domain = 'http://kd.henrikobsen.dk/';
+            // let domain = 'http://localhost:57693/';
 
             $.ajax({
                 type: 'GET',
-                url: 'http://kd.henrikobsen.dk/api/Program/GetFullProgram/' + id,
+                url: domain +'api/Program/GetFullProgram/' + id,
                 success: function (data) {
                     $("#loader").hide();                    
                     $("#pgmContainer").empty();
@@ -110,15 +113,16 @@
 
                  let res ="";
                    
-                   
+                  
                             
                     $.each(data.sessionsDetails, function (i, pgm) {
+                        
                         
                            res +="<div class=\"accordion\"><div class=\"itemName\">" + pgm.session.Name +"</div><div class=\"itemBoxEdit\"><i class=\"fa fa-plus\"></i> <i class=\"fa fa-pencil\"></i> <i class=\"fa fa-trash\"></i></div></div>";                         
                                     res += "<div class=\"panel\"><table><tr><th>Execise</th><th>Sets</th><th>Reps</th><th>Pause</th></tr>";
                                             $.each(pgm.sessionItems, function (i, ses) {
-                                                    
-                                                res += "<tr class=\"sessionItem\" onclick=\"navigate('../Session/SessionItem'," + ses.ID + ",'sItem')\"><td>" + ses.Name + "</td><td>" + ses.Sets + "</td><td>" + ((ses.Reps == '0') ? 'max' : ses.Reps) + "</td><td>" + ses.Pause + " sec</td></tr>";    
+                                                  let last = new Date(ses.LastRun).toLocaleDateString()  
+                                                res += "<tr class=\"" + ((last == today) ? 'sessionItemDone' :'sessionItem') + "\" onclick=\"navigate('../Session/SessionItem'," + ses.ID + ",'sItem')\"><td>" + ((last == today) ? '<i class="fa fa-check"></i>':'') + " " + ses.Name + "</td><td>" + ses.Sets + "</td><td>" + ((ses.Reps == '0') ? 'max' : ses.Reps) + "</td><td>" + ses.Pause + " sec</td></tr>";    
                                             });
                                             res += "</table></div>";
                            

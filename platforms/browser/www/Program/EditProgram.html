@@ -88,10 +88,12 @@
                 <form onsubmit="return SaveProg(), false;">                       
                        
                             <label for="Name">Program navn:</label><br/>
-                            <input type="text" id="Name">                                           
+                            <input type="text" id="Name" required>                                           
+                            <br/>
                             <br/>
                             <label for="Notes">Beskrivelse:</label><br/>
                             <textarea rows="5" id="Notes"></textarea>                        
+                            <br/>
                             <br/>
                             <input type="submit" value="Gem" />
                             <input id="Created" type="hidden" />
@@ -104,9 +106,9 @@
        
     <script>
 
-        //var domain = "http://kd.henrikobsen.dk/"
-var domain = "http://localhost:57693/";
-var admin = window.localStorage.getItem("admin");
+    var domain = "http://kd.henrikobsen.dk/"
+    //var domain = "http://localhost:57693/";
+    var admin = window.localStorage.getItem("admin");
 
 
 

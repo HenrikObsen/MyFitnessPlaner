@@ -49,6 +49,13 @@
 </head>
 
 <body>
+    <div id="popup">
+        <h2 id="delHeadline"></h2>
+        <input type="text" id="name" placeholder="Skriv navnet på programmet der skal slettes...">
+        <button onclick="DeleteSlet();">Slet</button> <button onclick="DeleteAnnuler();">Annuler</button><br/>
+        <div id="msg"></div>
+    </div>
+
         <nav class="navbar">
                 <div class="row">
                     <div class="content">
@@ -91,7 +98,49 @@
          </section>
        
     <script>
-      
+
+            var domain = "http://kd.henrikobsen.dk/"
+            //var domain = "http://localhost:57693/";
+            $("#popup").hide(); 
+
+            function DeleteOpen(id, name )
+            {
+                $("#popup").show(); 
+                $("#delHeadline").html("<i class=\"fa fa-trash\"></i> Slet " + name + "!")
+                window.localStorage.setItem("delid", id);
+                window.localStorage.setItem("name", name);
+            }
+
+            function DeleteAnnuler()
+            {
+                 $("#popup").hide(); 
+            }
+
+            function DeleteSlet()
+            {
+                var inputname = $('#name').val();            
+ 
+                if( window.localStorage.getItem("name") == inputname)
+                {
+                    $.ajax({
+                            type: 'GET',
+                            url: domain + 'api/Program/Delete/' + window.localStorage.getItem("delid"),
+                            success: function (hest) {
+                                $("#popup").hide(); 
+                                navigate('ProgramList');
+                            },
+                            error: function (jqXHR, exception) {
+                                var msg = 'Status: ' + jqXHR.status + "<br/>Exeption: " + exception;
+                                $('#msg').html(msg);
+                            }
+                        });
+                }
+                else
+                {
+                    $('#msg').html("Forkert navn!!!");
+                }
+
+            }
         
         $(function () {
             // console.log("ready!");
@@ -102,7 +151,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: 'http://kd.henrikobsen.dk/api/Program/GetAll/' + id,
+                url: domain + 'api/Program/GetAll/' + id,
                 success: function (data) {
                     $("#loader").hide();                    
                     $("#pgmContainer").empty();
@@ -110,7 +159,7 @@
                     
                     $.each(data, function (i, pgm) {
                         
-                           res += "<div class=\"prgItemBox\"><div class=\"prgItemBoxName\" onclick=\"navigate('../Session/Session'," + pgm.ID + ",'pgm')\"><i class=\"fa fa-list-alt\"></i>  " + pgm.Name + "</div><div class=\"prgItemBoxEdit\"><i class=\"fa fa-pencil\" onclick=\"navigate('EditProgram'," + pgm.ID + ",'edit');\"></i> <i class=\"fa fa-trash\"></i></div></div>";                         
+                           res += "<div class=\"prgItemBox\"><div class=\"prgItemBoxName\" onclick=\"navigate('../Session/Session'," + pgm.ID + ",'pgm')\"><i class=\"fa fa-list-alt\"></i>  " + pgm.Name + "</div><div class=\"prgItemBoxEdit\"><i class=\"fa fa-pencil\" onclick=\"navigate('EditProgram'," + pgm.ID + ",'edit');\"></i> <i class=\"fa fa-trash\" onclick=\"DeleteOpen(" + pgm.ID + ",'" + pgm.Name + "');\"></i></div></div>";                         
 
                     });
 

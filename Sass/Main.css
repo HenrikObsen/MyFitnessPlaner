@@ -28,7 +28,7 @@ h2 {
   font-size: 1em;
 }
 
-.center, #contentcontainer {
+.center, #contentcontainer, #popup {
   margin-left: auto;
   margin-right: auto;
 }
@@ -293,5 +293,47 @@ label {
   #desktopMenu {
     display: block;
   }
+}
+
+#popup {
+  width: calc(100% - 80px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  /* bring your own prefixes */
+  transform: translate(-50%, -60%);
+  background: lightgray;
+  border: solid gray 1px;
+  border-radius: 5px;
+  min-height: 100px;
+  text-align: center;
+  max-width: 400px;
+}
+
+#popup button {
+  min-width: 70px;
+  margin: 10px 5px;
+  padding: 7px 12px;
+  border: solid gray 1px;
+  border-radius: 5px;
+  color: white;
+  background: #ff7f29;
+}
+
+#popup h2 {
+  font-weight: bold;
+  margin: 10px;
+  font-size: 2em;
+}
+
+#popup input {
+  margin: 10px 0;
+}
+
+#popup #msg {
+  height: 20px;
+  color: red;
+  font-weight: bold;
 }
 /*# sourceMappingURL=Main.css.map */

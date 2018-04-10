@@ -138,4 +138,8 @@ label {
   border: solid #383838 1px;
   margin: 5px 0;
 }
+
+.sessionItemDone {
+  color: darkgreen;
+}
 /*# sourceMappingURL=Session.css.map */
