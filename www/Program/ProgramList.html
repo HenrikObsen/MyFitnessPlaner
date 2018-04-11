@@ -66,9 +66,10 @@
                             <div class="menu">
         
                                 <ul id="desktopMenu">
-                                    <li class="mobileMenuItem"><a href="">Edit ON/OFF</a></li>
-                                    <li class="mobileMenuItem"><a href="">My Profile</a></li>
-                                    <li class="mobileMenuItem"><a href="">Log Out</a></li>
+                                    <li class="mobileMenuItem"><a onclick="editOnOff();">Edit ON/OFF</a></li>
+                                    <li class="mobileMenuItem"><a href="../MyProfile.html">My Profile</a></li>
+                                    <li class="mobileMenuItem"><a href="../MyMeasurements.html">My Measurements</a></li>
+                                    <li class="mobileMenuItem"><a onclick="logOut();">Log Out</a></li>
                                 </ul>
         
                                 <div id="toggleMenu" class="fa fa-bars" (click)="toggleMenu()"></div>
@@ -82,16 +83,17 @@
             </nav>
             <nav id="menu-panel">
                 <ul class="" id="mobileMenu">
-                    <li class="mobileMenuItem"><a href="">Edit ON/OFF</a></li>
-                    <li class="mobileMenuItem"><a href="">My Profile</a></li>
-                    <li class="mobileMenuItem"><a href="">Log Out</a></li>
+                    <li class="mobileMenuItem"><a onclick="editOnOff();">Edit ON/OFF</a></li>
+                    <li class="mobileMenuItem"><a href="../MyProfile.html">My Profile</a></li>
+                    <li class="mobileMenuItem"><a href="../MyMeasurements.html">My Measurements</a></li>
+                    <li class="mobileMenuItem"><a onclick="logOut();">Log Out</a></li>
                 </ul>
             </nav>
          <section id="contentcontainer">
                 <img id="loader" class="center" src="../img/transfer.gif" />
                 <div class="wrapper">
                     <div id="headline"><h1><i class="fa fa-backward" aria-hidden="true" onclick="history.go(-1);return false;"></i> Programs</h1></div>
-                    <div id="pgmAdd"><i class="fa fa-plus" onclick="navigate('AddProgram',0);"></i></div>
+                    <div id="pgmAdd"></div>
                 </div>
                               
                 <div id="pgmContainer"></div>
@@ -141,13 +143,15 @@
                 }
 
             }
+
         
         $(function () {
             // console.log("ready!");
             $("#loader").show();
           
-            var admin = window.localStorage.getItem("admin");
-            var id = window.localStorage.getItem("user");
+            let admin = window.localStorage.getItem("admin");
+            ((admin == 'on') ? $("#pgmAdd").html("<i class=\"fa fa-plus\" onclick=\"navigate('AddProgram',0);\"></i>") : $("#pgmAdd").html(""));
+            let id = window.localStorage.getItem("user");
 
             $.ajax({
                 type: 'GET',
@@ -159,7 +163,7 @@
                     
                     $.each(data, function (i, pgm) {
                         
-                           res += "<div class=\"prgItemBox\"><div class=\"prgItemBoxName\" onclick=\"navigate('../Session/Session'," + pgm.ID + ",'pgm')\"><i class=\"fa fa-list-alt\"></i>  " + pgm.Name + "</div><div class=\"prgItemBoxEdit\"><i class=\"fa fa-pencil\" onclick=\"navigate('EditProgram'," + pgm.ID + ",'edit');\"></i> <i class=\"fa fa-trash\" onclick=\"DeleteOpen(" + pgm.ID + ",'" + pgm.Name + "');\"></i></div></div>";                         
+                           res += "<div class=\"prgItemBox\"><div class=\"prgItemBoxName\" onclick=\"navigate('../Session/Session'," + pgm.ID + ",'pgm')\"><i class=\"fa fa-list-alt\"></i>  " + pgm.Name + "</div><div class=\"prgItemBoxEdit\">" + ((admin == 'on') ? "<i class=\"fa fa-pencil\" onclick=\"navigate('EditProgram'," + pgm.ID + ",'edit');\"></i> <i class=\"fa fa-trash\" onclick=\"DeleteOpen(" + pgm.ID + ",'" + pgm.Name + "');\"></i>" : '') + "</div></div>";                         
 
                     });
 
@@ -171,7 +175,7 @@
         
         });
     </script>
- <!--<script type="text/javascript" src="../cordova.js"></script>-->
+ <script type="text/javascript" src="../cordova.js"></script>
  <script type="text/javascript" src="../js/index.js"></script>
  <script type="text/javascript">
      app.initialize();

@@ -61,9 +61,10 @@
                             <div class="menu">
         
                                 <ul id="desktopMenu">
-                                    <li class="mobileMenuItem"><a href="">Edit ON/OFF</a></li>
-                                    <li class="mobileMenuItem"><a href="">My Profile</a></li>
-                                    <li class="mobileMenuItem"><a href="">Log Out</a></li>
+                                    <li class="mobileMenuItem"><a onclick="editOnOff();">Edit ON/OFF</a></li>
+                                    <li class="mobileMenuItem"><a href="../MyProfile.html">My Profile</a></li>
+                                    <li class="mobileMenuItem"><a href="../MyMeasurements.html">My Measurements</a></li>
+                                    <li class="mobileMenuItem"><a onclick="logOut();">Log Out</a></li>
                                 </ul>
         
                                 <div id="toggleMenu" class="fa fa-bars" (click)="toggleMenu()"></div>
@@ -77,9 +78,10 @@
             </nav>
             <nav id="menu-panel">
                 <ul class="" id="mobileMenu">
-                    <li class="mobileMenuItem"><a href="">Edit ON/OFF</a></li>
-                    <li class="mobileMenuItem"><a href="">My Profile</a></li>
-                    <li class="mobileMenuItem"><a href="">Log Out</a></li>
+                    <li class="mobileMenuItem"><a onclick="editOnOff();">Edit ON/OFF</a></li>
+                    <li class="mobileMenuItem"><a href="../MyProfile.html">My Profile</a></li>
+                    <li class="mobileMenuItem"><a href="../MyMeasurements.html">My Measurements</a></li>
+                    <li class="mobileMenuItem"><a onclick="logOut();">Log Out</a></li>
                 </ul>
             </nav>
          <section id="contentcontainer">
@@ -249,8 +251,8 @@
         });
     });
     </script>
- <!--<script type="text/javascript" src="../cordova.js"></script>-->
- <script type="text/javascript" src="../js/index.js"></script>
+ <script type="text/javascript" src="cordova.js"></script>
+ <script type="text/javascript" src="js/index.js"></script>
  <script type="text/javascript">
      app.initialize();
  </script>

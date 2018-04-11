@@ -1,4 +1,28 @@
 
+function logOut(){
+    window.localStorage.removeItem("user");
+    window.localStorage.removeItem("role");
+    window.localStorage.removeItem("name");
+    window.location.assign("../index.html");
+}
+
+function editOnOff()
+{
+    let status = window.localStorage.getItem("admin");
+
+    if (status == 'on')
+    {
+        window.localStorage.setItem("admin", "off");
+    }
+    else
+    {
+        window.localStorage.setItem("admin", "on");
+    }
+
+    
+    location.reload(); 
+}
+
 function navigate(loca) {
     
        window.location.assign(loca + ".html");
