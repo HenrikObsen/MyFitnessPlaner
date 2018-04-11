@@ -88,8 +88,8 @@
         <div class="wrapper">
                 <div id="headline"><h1 id="headl"></h1></div>
                 <div id="pgmAdd"><i class="fa fa-plus"></i></div>
-            </div>      
-            
+        </div>      
+       
         <div id="pgmContainer"></div>
     </section>
     <script>
@@ -110,10 +110,12 @@
                 success: function (data) {
                     $("#loader").hide();                    
                     $("#pgmContainer").empty();
+                    $("#intro").html();
 
                 $("#headl").html("<i class=\"fa fa-backward\" aria-hidden=\"true\" onclick=\"history.go(-1);return false;\"></i> " + data.program.Name);
 
-                 let res ="";
+                 let res ="<div class=\"accordion\"><div class=\"itemName\">Introduktion</div><div class=\"itemBoxEdit\"></div></div>";                         
+                    res += "<div class=\"panel\">" + data.program.Notes + "</div>";
                    
                   
                             
