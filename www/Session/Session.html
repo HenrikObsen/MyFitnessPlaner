@@ -115,7 +115,7 @@
                 $("#headl").html("<i class=\"fa fa-backward\" aria-hidden=\"true\" onclick=\"history.go(-1);return false;\"></i> " + data.program.Name);
 
                  let res ="<div class=\"accordion\"><div class=\"itemName\">Introduktion</div><div class=\"itemBoxEdit\"></div></div>";                         
-                    res += "<div class=\"panel\"><p>" + data.program.Notes + "</p></div>";
+                    res += "<div class=\"panel\"><p>" + data.program.Notes.replace(/(?:\r\n|\r|\n)/g, '<br/>') + "</p></div>";
                  
                     $.each(data.sessionsDetails, function (i, pgm) {
                         

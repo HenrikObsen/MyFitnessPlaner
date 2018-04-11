@@ -268,13 +268,13 @@ label {
 }
 
 .wrapper #headline {
-  width: 60%;
+  width: 80%;
   float: left;
 }
 
 .wrapper #pgmAdd {
   text-align: right;
-  width: 20%;
+  width: 15%;
   float: right;
   font-size: 2em;
   color: #ff7f29;
