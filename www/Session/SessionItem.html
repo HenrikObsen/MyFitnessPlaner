@@ -110,9 +110,8 @@
 
         $(function () {
        
-            let d = new Date().toLocaleDateString().replace('/','-');
-                      
-            
+            let d = new Date();
+           
             var id = window.localStorage.getItem("sItem");
             let domain = "http://kd.henrikobsen.dk/"
             //let domain = 'http://localhost:57693/';
@@ -221,12 +220,11 @@
                     $("#btnTime").prop("disabled",true);
                     $("#msg").html("Exercise completed!");     
 
-                       
                                 $.ajax({
                                     type: 'GET',
-                                    url: domain +'api/Session/SetLastRun/' + id + "/" + d.replace('/','-'),
+                                    url: domain +'api/Session/SetLastRun/' + id + "/" + ToSqlDate(d),
                                     success: function (data) { 
-                                    alert(data);
+                                    
                                     }
                                 });      
             }

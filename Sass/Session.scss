@@ -41,7 +41,9 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    
+    p{
+        padding: 0px 10px;
+    }
     table{
         width:100%;
         font-size: -12px;

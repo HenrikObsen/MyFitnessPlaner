@@ -1,4 +1,4 @@
-@import url(c:\Users\hto\Source\Repos\MyFitnessPlaner\Sass\Grid.css);
+@import url(c:\Users\hto\source\repos\MyFitnessPlaner\Sass\Grid.css);
 html {
   font-size: 16px;
   /* our base font size */
@@ -109,6 +109,10 @@ label {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+
+.panel p {
+  padding: 0px 10px;
 }
 
 .panel table {

@@ -1,4 +1,24 @@
 
+function ToSqlDate(dato)
+{
+    let dat = new Date(dato);
+    return dat.getFullYear() + "-" + (dat.getMonth()+1) + "-" + dat.getDate();
+}
+
+function SqlToNormalDate(dato)
+{
+    var arr = dato.split("-")
+    return arr[2] + "-" + arr[1]  + "-" + arr[0];
+}
+
+function JSToNormalDate(dato)
+{
+    var arr = dato.split("/");
+    var month = ((arr[0].lelength >0)? arr[0] : "0"+arr[0]);
+    var day = ((arr[1].length >1)? arr[1] : "0"+arr[1]);
+    return arr[2] + "-" + month  + "-" + day;
+}
+
 function logOut(){
     window.localStorage.removeItem("user");
     window.localStorage.removeItem("role");
@@ -78,6 +98,4 @@ $(document).ready(function () {
     });
 });
 
-        // if (window.localStorage.getItem("user") == null) {
-        //     window.location.assign("../index.html");
-        // }
+        
